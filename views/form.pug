@@ -1,10 +1,12 @@
 extends layout
 
 block content 
-    h1 Form
-    form(id="form" action="/new" method="POST")
-        input(type="text", name="input", id="input", value="", placeholder="Wow it's a mini message board", required)
-        br 
-        input(type="text", name="username", id="username", placeholder="enter username", required)
-        br
-        button(type="submit", id="submitBtn") submit 
+    h1 Submit a message
+    div(id="form-container")
+        form(id="form" action="/new" method="POST")
+            textarea(type="text", name="input", id="messageInput", value="", placeholder="Enter your message")
+            br 
+            input(type="text", name="username", id="username", placeholder="Enter your username")
+            br
+            button(type="submit", id="submitBtn") submit
+            a(href='/', id="backBtn") back

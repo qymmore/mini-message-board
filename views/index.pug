@@ -3,8 +3,12 @@ extends layout
 block content
   h1= title
   each obj in messages 
-    p= obj.text
-    p= obj.user
-    p= obj.added
+    ul 
+      li(class="message")= obj.text
+      div(class="container")
+        li(class="user")= obj.user
+        li(class="date")= obj.added
   form(action="/form")
-    input(type="submit", value="submit message", id="messageBtn")
+    input(type="submit", value="write a message", id="messageBtn")
+  footer Mini Message Board © 2022 made by &nbsp;
+    a(href="https://github.com/qymmore") qymmore 
